@@ -1,9 +1,10 @@
 import Food from "../Food/Food"
+import '../../css/searchName.css'
 
 function SearchName({foods}) {
-    const foodsHtml = foods.map((item) => <li> <Food data={item}/> </li>)
+    const foodsHtml = foods.map((item, i) => <li key={i}> <Food data={item}/> </li>)
   return (
-    <ul>
+    <ul className="searchNameContainer">
         {foodsHtml}
     </ul>
   )

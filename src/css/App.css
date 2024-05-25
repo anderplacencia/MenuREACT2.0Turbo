@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.webTitle{
+position: absolute;
+top: 15px;
+left: 25px;
+margin: 10px;
+font-size: 36px;
+}
+
+.webSubtitle{
+position: absolute;
+top: 200px;
+left: 70px;
+}
+

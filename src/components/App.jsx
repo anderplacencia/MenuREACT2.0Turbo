@@ -10,9 +10,7 @@ import AuthRoute from "./AuthRoute/AuthRoute";
 import Profile from "./Login/Profile";
 import axios from "axios";
 import User from "./User/User";
-
-
-
+import "../css/App.css"
 
 function App() {
 
@@ -34,15 +32,15 @@ function App() {
   }, []);
 
   return ( 
-  <div>
+  <div className="body">
     
-    <h1>Plan de comidas</h1>
+    <h1 className="webTitle">Plan de comidas</h1>
     <NavBar />
       
 
     <Routes>
 
-      <Route path="/" element={<h2>Bienvenido, ¡Vamos a crear tu menú semanal!</h2>} />
+      <Route path="/" element={<h2 className="webSubtitle">Bienvenido, ¡Vamos a crear tu menú semanal!</h2>} />
       <Route path="/login" element={<Login listUsers={listUsers} setUser={setUser}/>} />
       <Route path="/searchName" element={<AuthRoute user={user} component={<SearchName foods={foods}/>}/>} />
       

@@ -1,0 +1,36 @@
+.navBarContainer {
+  display: block;
+
+  background-color: rgb(173, 126, 64);
+  border-radius: 25px;
+
+  position: absolute;
+  top: 90px;
+  left: 50vw;
+  translate: -180px;
+  
+  height: 60px;
+  width: 360px;
+}
+
+.navBarUl {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+li {
+  font-size: 18px;
+  list-style:none;
+}
+
+a{
+  color: #ffffff;
+  text-decoration: inherit;
+  font-weight: 500;
+}
+a:hover {
+  color: #e6e6e6;
+}

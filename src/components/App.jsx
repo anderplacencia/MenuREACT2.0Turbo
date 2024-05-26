@@ -1,58 +1,67 @@
-import { useEffect, useState } from "react";
-import getDataApi from "./Api";
-import SearchName from "./SearchName/SearchName";
-import Food from "./Food/Food";
-import { Route, Routes } from "react-router-dom";
-import Login from "./Login/Login";
-import getUsersApi from "./UserApi";
-import NavBar from "./NavBar/NavBar";
-import AuthRoute from "./AuthRoute/AuthRoute";
-import Profile from "./Login/Profile";
-import axios from "axios";
-import User from "./User/User";
-import "../css/App.css"
+import { useEffect, useState } from 'react'
+import getDataApi from './Api'
+import SearchName from './SearchName/SearchName'
+import { Route, Routes } from 'react-router-dom'
+import Login from './Login/Login'
+import getUsersApi from './UserApi'
+import NavBar from './NavBar/NavBar'
+import AuthRoute from './AuthRoute/AuthRoute'
+import '../css/App.css'
+import AccountMenu from './Login/AccountMenu'
+import MenuDisplay from './MenuDisplay/MenuDisplay'
+import Register from './Login/Register'
 
-function App() {
-
-  const [foods, setFoods] = useState([]);
+function App () {
+  const [foods, setFoods] = useState([])
   useEffect(() => {
-    getDataApi().then(cleanData =>{
+    getDataApi().then(cleanData => {
       setFoods(cleanData)
     })
-  }, []); 
+  }, [])
 
-
-
-  const [user, setUser] = useState(null);
-  const [listUsers, setListUser] = useState([]);
+  const [user, setUser] = useState(null)
+  const [listUsers, setListUser] = useState([])
   useEffect(() => {
     getUsersApi().then(cleanListUsers => {
       setListUser(cleanListUsers)
     })
-  }, []);
+  }, [])
 
-  return ( 
-  <div className="body">
-    
-    <h1 className="webTitle">Plan de comidas</h1>
-    <NavBar />
-      
+  return (
+    <div className='body'>
+      <h1 className='webTitle'>Plan de comidas</h1>
 
-    <Routes>
+      <AccountMenu user={user} />
+      <NavBar />
 
-      <Route path="/" element={<h2 className="webSubtitle">Bienvenido, ¡Vamos a crear tu menú semanal!</h2>} />
-      <Route path="/login" element={<Login listUsers={listUsers} setUser={setUser}/>} />
-      <Route path="/searchName" element={<AuthRoute user={user} component={<SearchName foods={foods}/>}/>} />
-      
+      <Routes>
+        <Route
+          path='/home'
+          element={
+            <h2 className='webSubtitle'>
+              Bienvenido, ¡Vamos a crear tu menú semanal!
+            </h2>
+          }
+        />
 
-
-    </Routes>
-
-  
-
-
-  </div>
-  );
+        <Route
+          path='/login'
+          element={<Login listUsers={listUsers} setUser={setUser} />}
+        />
+        <Route path='/register' element={<Register listUsers={listUsers}/>} />
+        <Route
+          path='/searchName'
+          element={
+            <AuthRoute user={user} component={<SearchName foods={foods} />} />
+          }
+        />
+        <Route
+          path='/menu'
+          element={<AuthRoute user={user} component={<MenuDisplay />} />}
+        />
+      </Routes>
+    </div>
+  )
 }
 
-export default App;
+export default App

@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import '../../css/login.css'
+import './login.css'
+import { useNavigate } from 'react-router-dom'
 
 function Login ({ setUser, listUsers }) {
   const [userLogin, setUserLogin] = useState({})
+  const navigate = useNavigate();
 
   const handleInput = ev => {
     const id = ev.target.id
@@ -18,6 +20,7 @@ function Login ({ setUser, listUsers }) {
 
     if (findUser) {
       setUser(findUser)
+      navigate("/SearchName")
     }
   }
 

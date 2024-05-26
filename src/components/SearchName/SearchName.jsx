@@ -1,5 +1,5 @@
 import Food from "../Food/Food"
-import '../../css/searchName.css'
+import './searchName.css'
 
 function SearchName({foods}) {
     const foodsHtml = foods.map((item, i) => <li key={i}> <Food data={item}/> </li>)

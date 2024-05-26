@@ -18,6 +18,26 @@ width: 360px;
   
   padding: 10px;
 }
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: rgb(173, 126, 64);
+  color: #ececec;
+font-weight: 500;
+  border-radius: 25px;
+  
+width: 360px;
+  height: 150px;
+
+  position: absolute;
+  top: 250px;
+  left: 50vw;
+  translate: -180px;
+  
+  padding: 10px;
+}
 
 .inputRow {
   display: flex;

@@ -2,6 +2,7 @@
   "name": "primera-web",
   "private": true,
   "version": "0.0.0",
+  "homepage": "./home",
   "type": "module",
   "scripts": {
     "dev": "vite",

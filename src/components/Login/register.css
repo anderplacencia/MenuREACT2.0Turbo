@@ -1,0 +1,25 @@
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    background-color: rgb(102, 86, 65);
+    color: #ffffff;
+  font-weight: 500;
+    border-radius: 25px;
+    
+  width: 360px;
+    height: 300px;
+  
+    position: absolute;
+    top: 250px;
+    left: 50vw;
+    translate: -180px;
+    
+    padding: 10px;
+  }
+
+  .errors{
+    color: rgb(255, 167, 167);
+    font-style: italic;
+  }

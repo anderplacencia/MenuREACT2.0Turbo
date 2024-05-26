@@ -1,0 +1,18 @@
+.accountContainer {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+
+  height: 60px;
+  width: 220px;
+}
+
+.accountLink {
+  all: unset;
+  color: #f8b230;
+  font-size: 20px;
+  font-weight: 500;
+}
+.accountLink:hover {
+  color: #e6e6e6;
+}

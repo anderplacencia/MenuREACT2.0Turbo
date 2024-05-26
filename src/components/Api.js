@@ -1,5 +1,5 @@
 //Acá estamos solicitando los datos de la API para luego llamarlos en el APP.jsx.
-
+//Listado de recetas, comidas
 
 const getDataApi = () => {
     return fetch('https://664a41f8a300e8795d417522.mockapi.io/goodFoods/APIFOOD')

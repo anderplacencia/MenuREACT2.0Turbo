@@ -1,6 +1,3 @@
-import { Navigate } from "react-router-dom";
-import getUsersApi from "../UserApi";
-
 function postUser (listUsers, data) {
 
 const newTask = {

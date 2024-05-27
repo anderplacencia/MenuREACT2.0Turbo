@@ -1,16 +1,22 @@
-function MenuDisplay() {
+import Menu from './Menu'
+import "./menuDisplay.css"
 
-  //esta null hasta que se haga el getmenus
-var menuHtml = null
-    //var menuHtml = menu.map((item, i) => <li key={i}> <Food data={item}/> </li>)
+function MenuDisplay (menu) {
+  //console.log("menudisplay:",menu)
+
+  //item --> array de menus .menu[{id,name, plan[], userId}]
+  var menuHtml = menu.menu.map((item, i) => (
+    <li key={i}>
+      {' '}
+      <Menu data={item} />{' '}
+    </li>
+  ))
   if (!menuHtml) {
-      menuHtml = "nada para mostrar"
-    }  
-  return (
-    <ul className="searchNameContainer">
-        {menuHtml}
-    </ul>
-  )
+    menuHtml = 'nada para mostrar'
+  }
+  return <div className='menuArrayContainer'>
+  <h2 className='menuDisplayTitle'>Mis menus:</h2>
+  {menuHtml}</div>
 }
 
 export default MenuDisplay

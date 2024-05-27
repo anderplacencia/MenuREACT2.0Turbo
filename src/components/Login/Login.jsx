@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './login.css'
 import { useNavigate } from 'react-router-dom'
+import getUserMenu from '../services/getMenu';
 
-function Login ({ setUser, listUsers }) {
+function Login ({ setUser, listUsers , setMenu}) {
   const [userLogin, setUserLogin] = useState({})
   const navigate = useNavigate();
 
@@ -18,7 +19,15 @@ function Login ({ setUser, listUsers }) {
         user.email === userLogin.email && user.password === userLogin.password
     )
 
-    if (findUser) {
+    //Usuario y pass correctos:
+    if (findUser) {      
+      //funcion asincrona para llamar a la info del menu
+      const getMenuApi = async() => {
+      setMenu( await getUserMenu(findUser))
+      }
+      getMenuApi()
+
+      //Se da valor del usuario logeado
       setUser(findUser)
       navigate("/SearchName")
     }

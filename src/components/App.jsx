@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import getDataApi from './Api'
+import getDataApi from './services/Api'
 import SearchName from './SearchName/SearchName'
 import { Route, Routes } from 'react-router-dom'
 import Login from './Login/Login'
-import getUsersApi from './UserApi'
+import getUsersApi from './services/UserApi'
 import NavBar from './NavBar/NavBar'
 import AuthRoute from './AuthRoute/AuthRoute'
 import '../css/App.css'
@@ -14,6 +14,7 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
 function App () {
+  //Array de recetas
   const [foods, setFoods] = useState([])
   useEffect(() => {
     getDataApi().then(cleanData => {
@@ -21,7 +22,9 @@ function App () {
     })
   }, [])
 
+  //user --> usuario conectado actual
   const [user, setUser] = useState(null)
+  //listUsers --> Array de usuarios registrados (Mejorar para no guardarlo en una variable)<------X
   const [listUsers, setListUser] = useState([])
   useEffect(() => {
     getUsersApi().then(cleanListUsers => {
@@ -29,12 +32,15 @@ function App () {
     })
   }, [])
 
+  //Fecha para elegir
   const [Fecha, setFecha] = useState(new Date());
-
-  
   const onChange = (fecha) => {
-    setDate(fecha);
+    setFecha(fecha)
   }
+
+  //array de menus del usuario conectado
+  var [menu, setMenu] = useState()
+ 
 
   return (
     <div className='body'>
@@ -42,7 +48,7 @@ function App () {
 
       <DatePicker  
       selected={Fecha} 
-      onChange={(fecha) => onchange(fecha)}
+      onChange={(fecha) => onChange(fecha)}
       monthsShown={2}
      
       />
@@ -62,7 +68,7 @@ function App () {
 
         <Route
           path='/login'
-          element={<Login listUsers={listUsers} setUser={setUser} />}
+          element={<Login listUsers={listUsers} setUser={setUser} setMenu={setMenu}/>}
         />
         <Route path='/register' element={<Register listUsers={listUsers}/>} />
         <Route
@@ -73,7 +79,7 @@ function App () {
         />
         <Route
           path='/menu'
-          element={<AuthRoute user={user} component={<MenuDisplay />} />}
+          element={<AuthRoute user={user} component={<MenuDisplay menu={menu} />} />}
         />
       </Routes>
     </div>

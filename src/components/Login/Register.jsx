@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import postUser from '../Post/userPost'
+import postUser from '../services/Post/userPost'
 import "./register.css"
 
 function Register ({ listUsers }) {

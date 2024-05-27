@@ -1,0 +1,99 @@
+.menuArrayContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: rgb(218, 154, 82);
+  border-radius: 25px;
+
+  position: absolute;
+  top: 160px;
+  left: 50px;
+  right: 50px;
+  max-width: 800px;
+  padding: 10px;
+}
+.menuDisplayTitle {
+  margin: 5px;
+}
+.menuContainer {
+  background-color: #fffae4;
+  border-radius: 10px;
+}
+.menuHeader {
+  display: flex;
+  justify-content: space-between;
+  
+  background-color: rgb(255, 226, 167);
+  border-radius: 10px 10px 0px 0px;
+}
+.menuTitle {
+  margin: 10px;
+  margin-left: 30px;
+  font-size: 20px;
+}
+.menuSubTitle{
+    margin: 10px;
+    font-size: 15px;
+    color: rgb(67, 69, 90);
+}
+.delButton{
+    
+    all: unset;
+    height: 40px;
+    width: 60px;
+    background-color: rgb(231, 75, 75);
+    border-radius: 10px;
+    margin: 15px;
+    color: white;
+
+}
+
+.menuDayContainer{
+    background-color: rgb(255, 226, 167);
+    border-radius: 10px;
+    margin: 8px;
+    padding-bottom: 1px;
+}
+
+.dayDisplay{
+    background-color: rgb(218, 154, 82);
+    
+    padding: 10px;
+    width: 100px;
+    translate: 14px -14px;
+    border-radius: 10px;
+
+}
+.daysArray{
+    margin: 10px;
+    margin-top: -30px;
+    padding: 0;
+}
+.miniFoodContainer{
+    background-color:#fffae4;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+}
+.miniFoodImage {
+    width: 100px;
+        object-fit: contain;   
+        max-height: 100px; 
+    margin: 10px;
+    display: inline;
+    border-radius: 10px;
+  }
+  .miniFoodData{
+    display: block;
+    text-align: left;
+  }
+.miniFoodTitle{
+    font-size: 16px;
+    font-weight: 500;
+}
+.miniFoodClas{
+    font-size: 14px;
+    font-weight: 400;
+    display: inline;
+}

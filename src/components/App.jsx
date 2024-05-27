@@ -10,6 +10,8 @@ import '../css/App.css'
 import AccountMenu from './Login/AccountMenu'
 import MenuDisplay from './MenuDisplay/MenuDisplay'
 import Register from './Login/Register'
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
 
 function App () {
   const [foods, setFoods] = useState([])
@@ -27,9 +29,23 @@ function App () {
     })
   }, [])
 
+  const [Fecha, setFecha] = useState(new Date());
+
+  
+  const onChange = (fecha) => {
+    setDate(fecha);
+  }
+
   return (
     <div className='body'>
       <h1 className='webTitle'>Plan de comidas</h1>
+
+      <DatePicker  
+      selected={Fecha} 
+      onChange={(fecha) => onchange(fecha)}
+      monthsShown={2}
+     
+      />
 
       <AccountMenu user={user} />
       <NavBar />
